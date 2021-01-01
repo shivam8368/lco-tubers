@@ -26,7 +26,7 @@ SECRET_KEY = 'ce205kzxsuj_axwq&o)^%jnwqz=g12^zxwjz@k*p5_iaor!=to'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['lco-tubers.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['lco-tubers.herokuapp.com', '127.0.0.1', 'ytubers.net']
 LOGIN_REDIRECT_URL = 'dashboard'
 
 
