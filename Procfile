@@ -1,1 +1,1 @@
-web: gunicorn tubers.wggi --log-file -
+web: gunicorn tubers.wgsi --log-file -
