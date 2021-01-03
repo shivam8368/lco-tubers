@@ -26,7 +26,7 @@ SECRET_KEY = 'ce205kzxsuj_axwq&o)^%jnwqz=g12^zxwjz@k*p5_iaor!=to'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['lco-tubers.herokuapp.com', '127.0.0.1', 'ytubers.net']
+ALLOWED_HOSTS = ['*']
 LOGIN_REDIRECT_URL = 'dashboard'
 
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -140,10 +141,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR , 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'tubers/static')
 ]
 
 
 SITE_ID = 1
+
+
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIAWYPWD3IOMBP4E2TN'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'lcoubers-bucket'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
