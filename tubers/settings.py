@@ -153,6 +153,16 @@ SITE_ID = 1
 
 
 #S3 BUCKETS CONFIG
+# import boto3
+# from botocore.client import Config
+
+
+# s3 = boto3.resource(
+#     's3',
+#     aws_access_key_id='AKIAWYPWD3IOMBP4E2TN',
+#     aws_secret_access_key='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',
+#     config=Config(signature_version='s3v4')
+# )
 
 AWS_ACCESS_KEY_ID = 'AKIAWYPWD3IOMBP4E2TN'
 AWS_SECRET_ACCESS_KEY = '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'
@@ -160,3 +170,4 @@ AWS_STORAGE_BUCKET_NAME = 'lcoubers-bucket'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_REGION_NAME = "us-east-2"
