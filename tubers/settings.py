@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ce205kzxsuj_axwq&o)^%jnwqz=g12^zxwjz@k*p5_iaor!=to'
+SECRET_KEY = config('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
 
 ALLOWED_HOSTS = ['*']
 LOGIN_REDIRECT_URL = 'dashboard'
@@ -164,8 +167,10 @@ SITE_ID = 1
 #     config=Config(signature_version='s3v4')
 # )
 
-AWS_ACCESS_KEY_ID = 'AKIAWYPWD3IOMBP4E2TN'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+
 AWS_STORAGE_BUCKET_NAME = 'lcoubers-bucket'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
